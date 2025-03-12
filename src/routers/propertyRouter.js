@@ -2,7 +2,7 @@ import express from "express";
 const router = express.Router();
 
 
-router.get("/", (req, res)=>{
+router.get("/01", (req, res)=>{
     const propertyData ={
         bairro:"Indaia",
         cidade:"Caraguatatuba",
@@ -15,7 +15,7 @@ router.get("/", (req, res)=>{
 })
 
 
-router.post("/", (req, res)=>{
+router.post("/cadastrar", (req, res)=>{
     const propertyData ={
         message: "Imovel cadastrado com sucesso",
         bairro:"Indaia",
@@ -28,7 +28,7 @@ router.post("/", (req, res)=>{
     res.json(propertyData);
 })
 
-router.delete("/", (req, res)=>{
+router.delete("/delete", (req, res)=>{
     const propertyData ={
         message: "Imovel deletado com sucesso",
     }
@@ -48,7 +48,7 @@ router.patch("/bairro", (req, res)=>{
     res.json(propertyData);
 })
 
-router.put("/", (req, res)=>{
+router.put("/update", (req, res)=>{
     const propertyData ={
         message: "Imovel atualizado com sucesso",
         bairro:"Jaraguá",
