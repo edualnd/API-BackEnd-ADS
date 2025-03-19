@@ -17,6 +17,10 @@
   "author": "Eduarda Gonçalves",
   "license": "ISC",
   "devDependencies": {
+    "prisma": "^6.5.0"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.5.0",
     "express": "^4.21.2"
   }
 }
