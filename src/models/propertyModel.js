@@ -10,3 +10,27 @@ export const create = async (property) =>{
 }
 
 
+export const deleteProperty = async (id) =>{
+    const result = await prisma.property.delete({
+        where:{
+            id,
+        }
+    })
+   return result;
+}
+
+export const getList = async () =>{
+    const result = await prisma.property.findMany();
+   return result;
+}
+
+export const update = async (id, propertyData) =>{
+    const result = await prisma.property.update({
+        where:{
+            id,
+        },
+        data: propertyData,
+    })
+   return result;
+}
+
