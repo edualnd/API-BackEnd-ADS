@@ -28,7 +28,7 @@ app.get("/", (req, res)=>{
 
 
     -   CRUD - User
-    -   CRUD - 
+    -   CRUD - Incrição de eventos
 
     -   CRUD - Atividades
     -   CRUD - Post "evento"
