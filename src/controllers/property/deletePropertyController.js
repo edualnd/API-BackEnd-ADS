@@ -1,16 +1,34 @@
 import express from "express";
-import { deleteProperty } from "../../models/propertyModel.js";
+import {
+  deleteProperty,
+  propertyValidator,
+} from "../../models/propertyModel.js";
 
-const deletePropertyController = async (req,res) =>{
+const deletePropertyController = async (req, res) => {
+  const { id } = req.params;
+  const { success, error } = propertyValidator(
+    { id },
+    {
+      type: true,
+      property: true,
+      address: true,
+      rooms: true,
+    },
+  );
 
-    const {id} = req.params;
+  if (success) {
+    const result = await deleteProperty(parseInt(id));
+    return res.status(200).json({
+      success,
+      message: "Imovel deletado com sucesso",
+      property: result,
+    });
+  }
 
-    const result =  await deleteProperty(parseInt(id));
-
-    const propertyData ={
-        message: "Imovel deletado com sucesso",
-        property: result,
-    }
-    return res.json(propertyData);
-}
+  return res.status(400).json({
+    success,
+    message: "Error invalid input ",
+    errors: error.flatten().fieldErrors,
+  });
+};
 export default deletePropertyController;

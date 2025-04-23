@@ -23,3 +23,33 @@ app.get("/", (req, res)=>{
     res.send("Bem-vindo a API");
 })
 
+/*
+    Rede social de esportes litoral de sao paulo
+
+
+    -   CRUD - User
+    -   CRUD - 
+
+    -   CRUD - Atividades
+    -   CRUD - Post "evento"
+
+    -   CRUD - Comentario
+    -   CRUD - Avaliação
+
+    n-logado
+
+    /
+    /user
+
+----------------------------------
+    common/professional
+
+    user/Post-evento
+    user/Comentario
+    user/Group
+    user/Avaliação
+
+----------------------------------
+    professional *Repensar*
+    user/professional/Atividades
+*/

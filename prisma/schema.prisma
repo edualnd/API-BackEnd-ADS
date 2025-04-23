@@ -23,7 +23,7 @@ model user {
 model property {
   id          Int       @id @default(autoincrement())
   property    String    @db.VarChar(20)
-  type        String    @db.VarChar(10)
+  type        String    @db.VarChar(7)
   address     String
   rooms       Int
 }
